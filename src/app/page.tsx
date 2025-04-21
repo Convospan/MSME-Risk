@@ -5,13 +5,12 @@ import { motion } from 'framer-motion';
 import PaymentForm from '@/components/PaymentForm';
 import CampaignForm from '@/components/CampaignForm';
 import Link from 'next/link';
-import { Button } from '@nextui-org/react';
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetTrigger,
   SheetContent,
 } from "@/components/ui/sheet";
-import React from "react";
 
 export default function Home() {
   return (
