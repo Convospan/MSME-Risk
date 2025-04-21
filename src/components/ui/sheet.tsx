@@ -3,7 +3,7 @@ import * as SheetPrimitive from "@radix-ui/react-sheet";
 import { cva, type VariantProps } from "class-variance-authority";
 import { X } from "lucide-react";
 
-import { cn } from "@/lib/utils"; // Ensure this file exists
+import { cn } from "@/lib/utils"; // Adjust path if utils.ts is elsewhere
 
 const Sheet = SheetPrimitive.Root;
 
