@@ -7,7 +7,7 @@ interface ProbabilityOfDefaultProps {
 export const ProbabilityOfDefault = ({ probability }: ProbabilityOfDefaultProps) => {
   return (
     <div className="text-3xl font-bold text-primary">
-      {probability.toFixed(2)}%
+      {(probability * 100).toFixed(2)}%
     </div>
   );
 };

@@ -5,6 +5,7 @@ import { DataUpload } from "@/components/data-upload";
 import { RegulatoryComplianceDashboard } from "@/components/regulatory-compliance-dashboard";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { AIToolsSummary } from "@/components/ai-tools-summary";
 
 export default function DashboardPage() {
   // Mock data for demonstration purposes
@@ -30,7 +31,7 @@ export default function DashboardPage() {
         invoiceAnomalies={mockInvoiceAnomalies}
         isLoading={false}
       />
-
+      <AIToolsSummary />
       <RegulatoryComplianceDashboard gstin="12345ABCDE6789" />
     </div>
   );

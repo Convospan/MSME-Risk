@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Copy, Download } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import ClientOnly from "@/components/ClientOnly";
 
 const sampleData = `Loan Amount,Interest Rate,Term (Months),Credit Score,Industry
 100000,0.08,36,720,Retail
@@ -70,6 +71,7 @@ export default function DataUploadPage() {
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Sample Data</h2>
+        <ClientOnly>
         <div className="relative">
           <textarea
             ref={textAreaRef}
@@ -89,6 +91,7 @@ export default function DataUploadPage() {
             </Button>
           </div>
         </div>
+        </ClientOnly>
       </section>
 
       <section>
