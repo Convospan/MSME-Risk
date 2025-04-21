@@ -36,32 +36,32 @@ export const RegulatoryComplianceDashboard = ({ gstin }: RegulatoryComplianceDas
   }, [gstin]);
 
   return (
-    <Card>
+    <Card className="rounded-lg shadow-md">
       <CardHeader>
-        <CardTitle>Regulatory Compliance Dashboard</CardTitle>
+        <CardTitle className="text-xl font-semibold">Regulatory Compliance Dashboard</CardTitle>
       </CardHeader>
       <CardContent>
         {isLoading ? (
-          <Skeleton className="h-8 w-40" />
+          <Skeleton className="h-8 w-40 animate-pulse" />
         ) : (
           <>
             {complianceData ? (
               <>
-                <p className="text-sm">
+                <p className="text-sm text-muted-foreground">
                   <strong>GSTIN:</strong> {gstin}
                 </p>
-                <p className="text-sm">
+                <p className="text-sm text-muted-foreground">
                   <strong>Status:</strong> {complianceData.gstinDetails?.status}
                 </p>
-                <p className="text-sm">
+                <p className="text-sm text-muted-foreground">
                   <strong>Summary:</strong> {complianceData.summary}
                 </p>
-                <p className="text-sm">
+                <p className="text-sm text-muted-foreground">
                   <strong>Next Steps:</strong> {complianceData.nextSteps}
                 </p>
               </>
             ) : (
-              <p className="text-sm">No compliance data available.</p>
+              <p className="text-sm text-muted-foreground">No compliance data available.</p>
             )}
           </>
         )}

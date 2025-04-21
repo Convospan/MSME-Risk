@@ -8,7 +8,7 @@ export const InvoiceAnomalies = ({ anomalies }: InvoiceAnomaliesProps) => {
   return (
     <ul>
       {anomalies.map((anomaly, index) => (
-        <li key={index} className="text-sm">
+        <li key={index} className="text-sm text-muted-foreground">
           {anomaly}
         </li>
       ))}

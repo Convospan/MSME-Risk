@@ -1,7 +1,16 @@
+"use client";
+
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import PaymentForm from '@/components/PaymentForm';
+import CampaignForm from '@/components/CampaignForm';
 import Link from 'next/link';
-import { Button } from '@nextui-org/react'; // Adjust import based on your Button source
+import { Button } from '@nextui-org/react';
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+} from "@/components/ui/sheet";
 
 export default function Home() {
   return (
@@ -19,10 +28,20 @@ export default function Home() {
         <Link href="/invoice-analysis">
           <Button variant="outline">Invoice Analysis</Button>
         </Link>
-        {/* Add more navigation links if needed */}
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button variant="outline">Open Sheet</Button>
+          </SheetTrigger>
+          <SheetContent>
+            <div className="p-4">
+              <h2 className="text-xl font-semibold">Sheet Content</h2>
+              <p>This is a sample sheet for additional info or actions.</p>
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
       {/* Hero Section */}
-      <header className="grid grid-cols-[1fr_auto] items-center px-6 py-4 sm:px-8 lg:grid-cols-[1fr_auto_1fr]">
+      <header className="grid grid-cols-[1fr_auto] items-center px-6 py-4 sm:px-8 lg:grid-cols-[1fr_auto_1fr] mt-16">
         <div>
           <div className="flex gap-x-1.5 text-sm/6 max-sm:flex-col">
             <h1 className="font-semibold">
@@ -194,13 +213,15 @@ export default function Home() {
           <p className="text-lg mb-8 text-center max-w-3xl mx-auto">
             Basic ₹999, Pro ₹2,999, Enterprise ₹9,999+—let’s grow together!
           </p>
-         </motion.div>
+          <PaymentForm />
+          <CampaignForm />
+        </motion.div>
       </section>
 
       {/* Footer */}
       <footer className="bg-gray-950 text-white py-6 text-center w-full mt-16">
         <p className="text-lg">
-          © 2025 ConvoSpan.ai |{' '}
+          © 2025 ConvoSpan.ai |
           <a href="/contact" className="underline text-primary-orange hover:text-opacity-80 transition duration-300">
             Contact
           </a>

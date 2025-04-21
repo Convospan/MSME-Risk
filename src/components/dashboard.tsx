@@ -21,39 +21,39 @@ export const Dashboard = ({
 }: DashboardProps) => {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      <Card>
+      <Card className="rounded-lg shadow-md">
         <CardHeader>
-          <CardTitle>Credit Score</CardTitle>
+          <CardTitle className="text-xl font-semibold">Credit Score</CardTitle>
         </CardHeader>
         <CardContent>
           {isLoading ? (
-            <Skeleton className="h-8 w-20" />
+            <Skeleton className="h-8 w-20 animate-pulse" />
           ) : (
             <CreditScore score={creditScore || 0} />
           )}
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className="rounded-lg shadow-md">
         <CardHeader>
-          <CardTitle>Probability of Default (12 Months)</CardTitle>
+          <CardTitle className="text-xl font-semibold">Probability of Default (12 Months)</CardTitle>
         </CardHeader>
         <CardContent>
           {isLoading ? (
-            <Skeleton className="h-8 w-20" />
+            <Skeleton className="h-8 w-20 animate-pulse" />
           ) : (
             <ProbabilityOfDefault probability={defaultProbability || 0} />
           )}
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className="rounded-lg shadow-md">
         <CardHeader>
-          <CardTitle>Invoice Anomalies</CardTitle>
+          <CardTitle className="text-xl font-semibold">Invoice Anomalies</CardTitle>
         </CardHeader>
         <CardContent>
           {isLoading ? (
-            <Skeleton className="h-8 w-40" />
+            <Skeleton className="h-8 w-40 animate-pulse" />
           ) : (
             <InvoiceAnomalies anomalies={invoiceAnomalies || []} />
           )}
