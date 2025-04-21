@@ -1,16 +1,9 @@
-"use client";
-
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import PaymentForm from '@/components/PaymentForm';
 import CampaignForm from '@/components/CampaignForm';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetTrigger,
-  SheetContent,
-} from "@/components/ui/sheet";
 
 export default function Home() {
   return (
@@ -19,24 +12,22 @@ export default function Home() {
         <Link href="/dashboard">
           <Button variant="outline">Dashboard</Button>
         </Link>
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button variant="outline">Open Sheet</Button>
-          </SheetTrigger>
-          <SheetContent>
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">Sheet Content</h2>
-              <p>This is a sample sheet for additional info or actions.</p>
-            </div>
-          </SheetContent>
-        </Sheet>
+        <Link href="/regulatory-compliance">
+          <Button variant="outline">Regulatory Compliance</Button>
+        </Link>
+        <Link href="/financial-insights">
+          <Button variant="outline">Financial Insights</Button>
+        </Link>
+        <Link href="/invoice-analysis">
+          <Button variant="outline">Invoice Analysis</Button>
+        </Link>
       </div>
       {/* Hero Section */}
-      <header className="grid grid-cols-[1fr_auto] items-center px-6 py-4 sm:px-8 lg:grid-cols-[1fr_auto_1fr]">
+      <header className="grid grid-cols-[1fr_auto] items-center px-6 py-4 sm:px-8 lg:grid-cols-[1fr_auto_1fr] mt-16">
         <div>
           <div className="flex gap-x-1.5 text-sm/6 max-sm:flex-col">
             <h1 className="font-semibold">
-              <Link href="/" className="hover:text-primary-orange transition-colors">ConvoSpan</Link>
+              <Link href="/" className="hover:text-primary-orange transition-colors">MSME Insights AI</Link>
             </h1>
             <div className="max-sm:hidden" aria-hidden="true">·</div>
             <p>AI Outreach Platform</p>
@@ -48,14 +39,6 @@ export default function Home() {
               <li className="flex gap-1.5 text-gray-600 after:text-gray-300 not-last:after:content-['/']">React</li>
             </ul>
           </div>
-        </div>
-        <div className="justify-self-end">
-          <Link
-            href="/register"
-            className="inline-flex justify-center rounded-full text-sm/6 font-semibold bg-gray-950 text-white hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-950 px-4 py-2"
-          >
-            Get Started
-          </Link>
         </div>
       </header>
       <section className="relative mx-auto w-full max-w-7xl mt-16">
@@ -69,12 +52,12 @@ export default function Home() {
           <p className="text-lg mb-8 max-w-2xl mx-auto">
             I’ll turn your chats into wins with AI magic. Sign up free and let’s get started!
           </p>
-          <Link
+          <a
             href="/register"
             className="bg-cta-pink text-white px-6 py-3 rounded-full shadow-md hover:bg-opacity-90 transition duration-300 inline-block"
           >
             Start for Free!
-          </Link>
+          </a>
           <p className="mt-4 text-sm">No card, 7-day trial!</p>
         </motion.div>
         <Image
