@@ -5,13 +5,12 @@ import { motion } from 'framer-motion';
 import PaymentForm from '@/components/PaymentForm';
 import CampaignForm from '@/components/CampaignForm';
 import Link from 'next/link';
-import { Button } from '@nextui-org/react';
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetTrigger,
   SheetContent,
 } from "@/components/ui/sheet";
-import React from "react";
 
 export default function Home() {
   return (
@@ -34,7 +33,7 @@ export default function Home() {
       </div>
       {/* Rest of the content remains the same as previous version */}
       <header className="grid grid-cols-[1fr_auto] items-center px-6 py-4 sm:px-8 lg:grid-cols-[1fr_auto_1fr]">
-        <div >
+        <div>
           <div className="flex gap-x-1.5 text-sm/6 max-sm:flex-col">
             <h1 className="font-semibold">
               <a href="/" className="hover:text-primary-orange transition-colors">ConvoSpan</a>
@@ -98,15 +97,15 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-        <Image
+          <Image
             src="/images/prospecting-dashboard.jpg"
             alt="Dashboard"
             width={600}
             height={400}
             className="mx-auto mb-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
-              onError={(e) => {
-                console.error("Image failed to load:", e.target);
-              }}
+            onError={(e) => {
+              console.error("Image failed to load:", e.target);
+            }}
           />
           <h2 className="text-3xl font-semibold mb-4">Let Me Handle Your Prospecting—Super Easy!</h2>
           <p className="text-lg mb-6 max-w-3xl mx-auto">
@@ -133,15 +132,10 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-             <Image
-                src="/images/multi-channel-ai.jpg"
-                alt="Multi-platform"
-                width={300}
-                height={200}
-                className="rounded-lg mb-4"
-                 onError={(e) => {
-                   console.error("Image failed to load:", e.target);
-                 }}
+              <Image src="/images/multi-channel-ai.jpg" alt="Multi-platform" width={300} height={200} className="rounded-lg mb-4"
+                onError={(e) => {
+                  console.error("Image failed to load:", e.target);
+                }}
               />
               <h3 className="text-xl font-medium">Smart Sequences</h3>
               <p className="text-gray-600">AI-crafted outreach plans tailored to your goals.</p>
@@ -151,15 +145,10 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-             <Image
-                src="/images/lead-management.jpg"
-                alt="Lead chart"
-                width={300}
-                height={200}
-                className="rounded-lg mb-4"
-                 onError={(e) => {
-                   console.error("Image failed to load:", e.target);
-                 }}
+              <Image src="/images/lead-management.jpg" alt="Lead chart" width={300} height={200} className="rounded-lg mb-4"
+                onError={(e) => {
+                  console.error("Image failed to load:", e.target);
+                }}
               />
               <h3 className="text-xl font-medium">Lead Tracking</h3>
               <p className="text-gray-600">Real-time insights into your connections.</p>
@@ -169,15 +158,10 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-             <Image
-                src="/images/payment-success.jpg"
-                alt="Payment"
-                width={300}
-                height={200}
-                className="rounded-lg mb-4"
-                 onError={(e) => {
-                   console.error("Image failed to load:", e.target);
-                 }}
+              <Image src="/images/payment-success.jpg" alt="Payment" width={300} height={200} className="rounded-lg mb-4"
+                onError={(e) => {
+                  console.error("Image failed to load:", e.target);
+                }}
               />
               <h3 className="text-xl font-medium">Flexible Plans</h3>
               <p className="text-gray-600">Choose a tier that grows with you.</p>
@@ -191,9 +175,9 @@ export default function Home() {
               width={800}
               height={400}
               className="mx-auto rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
-               onError={(e) => {
-                 console.error("Image failed to load:", e.target);
-               }}
+              onError={(e) => {
+                console.error("Image failed to load:", e.target);
+              }}
             />
             <p className="mt-4 text-sm">Steps: Sign Up, Plan, Build & Test, Meet AI Caller, Launch, Tweak, Celebrate!</p>
           </div>
@@ -208,15 +192,15 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-         <Image
+          <Image
             src="/images/lead-management.jpg"
             alt="Lead flow chart"
             width={600}
             height={400}
             className="mx-auto mb-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
-             onError={(e) => {
-               console.error("Image failed to load:", e.target);
-             }}
+            onError={(e) => {
+              console.error("Image failed to load:", e.target);
+            }}
           />
           <h2 className="text-3xl font-semibold mb-4">Keep Track of Leads with Me—Simple and Fun!</h2>
           <p className="text-lg mb-6 max-w-3xl mx-auto">
@@ -233,15 +217,15 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-         <Image
+          <Image
             src="/images/payment-success.jpg"
             alt="Payment confirmation"
             width={600}
             height={400}
             className="mx-auto mb-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
-             onError={(e) => {
-               console.error("Image failed to load:", e.target);
-             }}
+            onError={(e) => {
+              console.error("Image failed to load:", e.target);
+            }}
           />
           <h2 className="text-3xl font-semibold mb-6 text-center">Choose a Plan That Fits Us!</h2>
           <p className="text-lg mb-8 text-center max-w-3xl mx-auto">
