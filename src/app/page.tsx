@@ -32,7 +32,7 @@ export default function Home() {
         </Sheet>
       </div>
       {/* Rest of the content remains the same as previous version */}
-      <header className="grid grid-cols-[1fr_auto] items-center px-6 py-4 sm:px-8 lg:grid-cols-[1fr_auto_1fr]">
+      <header className="grid grid-cols-[1fr_auto] items-center px-6 py-4 sm:px-8 lg:grid-cols-[1fr_auto_1fr] mt-16">
         <div>
           <div className="flex gap-x-1.5 text-sm/6 max-sm:flex-col">
             <h1 className="font-semibold">
@@ -83,9 +83,6 @@ export default function Home() {
           fill
           style={{ objectFit: 'cover', opacity: 0.2 }}
           className="absolute top-0 left-0 z-0 rounded-xl"
-          onError={(e) => {
-            console.error("Image failed to load:", e.target);
-          }}
         />
       </section>
 
@@ -103,9 +100,6 @@ export default function Home() {
             width={600}
             height={400}
             className="mx-auto mb-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
-            onError={(e) => {
-              console.error("Image failed to load:", e.target);
-            }}
           />
           <h2 className="text-3xl font-semibold mb-4">Let Me Handle Your Prospecting—Super Easy!</h2>
           <p className="text-lg mb-6 max-w-3xl mx-auto">
@@ -132,11 +126,7 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <Image src="/images/multi-channel-ai.jpg" alt="Multi-platform" width={300} height={200} className="rounded-lg mb-4"
-                onError={(e) => {
-                  console.error("Image failed to load:", e.target);
-                }}
-              />
+              <Image src="/images/multi-channel-ai.jpg" alt="Multi-platform" width={300} height={200} className="rounded-lg mb-4" />
               <h3 className="text-xl font-medium">Smart Sequences</h3>
               <p className="text-gray-600">AI-crafted outreach plans tailored to your goals.</p>
             </motion.div>
@@ -145,11 +135,7 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <Image src="/images/lead-management.jpg" alt="Lead chart" width={300} height={200} className="rounded-lg mb-4"
-                onError={(e) => {
-                  console.error("Image failed to load:", e.target);
-                }}
-              />
+              <Image src="/images/lead-management.jpg" alt="Lead chart" width={300} height={200} className="rounded-lg mb-4" />
               <h3 className="text-xl font-medium">Lead Tracking</h3>
               <p className="text-gray-600">Real-time insights into your connections.</p>
             </motion.div>
@@ -158,11 +144,7 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <Image src="/images/payment-success.jpg" alt="Payment" width={300} height={200} className="rounded-lg mb-4"
-                onError={(e) => {
-                  console.error("Image failed to load:", e.target);
-                }}
-              />
+              <Image src="/images/payment-success.jpg" alt="Payment" width={300} height={200} className="rounded-lg mb-4" />
               <h3 className="text-xl font-medium">Flexible Plans</h3>
               <p className="text-gray-600">Choose a tier that grows with you.</p>
             </motion.div>
@@ -175,9 +157,6 @@ export default function Home() {
               width={800}
               height={400}
               className="mx-auto rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
-              onError={(e) => {
-                console.error("Image failed to load:", e.target);
-              }}
             />
             <p className="mt-4 text-sm">Steps: Sign Up, Plan, Build & Test, Meet AI Caller, Launch, Tweak, Celebrate!</p>
           </div>
@@ -198,9 +177,6 @@ export default function Home() {
             width={600}
             height={400}
             className="mx-auto mb-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
-            onError={(e) => {
-              console.error("Image failed to load:", e.target);
-            }}
           />
           <h2 className="text-3xl font-semibold mb-4">Keep Track of Leads with Me—Simple and Fun!</h2>
           <p className="text-lg mb-6 max-w-3xl mx-auto">
@@ -223,9 +199,6 @@ export default function Home() {
             width={600}
             height={400}
             className="mx-auto mb-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
-            onError={(e) => {
-              console.error("Image failed to load:", e.target);
-            }}
           />
           <h2 className="text-3xl font-semibold mb-6 text-center">Choose a Plan That Fits Us!</h2>
           <p className="text-lg mb-8 text-center max-w-3xl mx-auto">
