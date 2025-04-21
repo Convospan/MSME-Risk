@@ -1,7 +1,5 @@
-use client";
-
-import type {Metadata} from 'next/server';
-import {Geist, Geist_Mono} from 'next/font/google';
+import type { Metadata } from 'next/server';
+import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { SidebarProvider, Sidebar, SidebarContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarInset } from '@/components/ui/sidebar';
