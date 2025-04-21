@@ -41,6 +41,7 @@ body {
     --sidebar-accent-foreground: 0 0% 100%; /* White */
     --sidebar-border: 214.3 31.8% 91.4%; /* Light Grey (Slightly Darker) */
     --sidebar-ring: 222.2 47.4% 11.2%; /* Deep Blue */
+        --primary-orange: 25 75% 55%;
   }
 
   .dark {
@@ -77,6 +78,8 @@ body {
         --sidebar-accent-foreground: 210 40% 98%;
         --sidebar-border: 216 34% 17%;
         --sidebar-ring: 217.2 32.6% 17.5%;
+                --primary-orange: 25 75% 55%;
+
   }
 }
 
@@ -88,4 +91,5 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
 
