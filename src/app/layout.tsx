@@ -5,6 +5,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { SidebarProvider, Sidebar, SidebarContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarInset } from '@/components/ui/sidebar';
 import Link from 'next/link';
 import { Home, ShieldCheck, File, MessageSquare } from 'lucide-react';
+import React from "react";
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
