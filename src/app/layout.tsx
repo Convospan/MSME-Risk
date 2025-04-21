@@ -2,7 +2,9 @@ import type {Metadata} from 'next';
 import {Geist, Geist_Mono} from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
-import { SidebarProvider } from '@/components/ui/sidebar';
+import { SidebarProvider, Sidebar, SidebarContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarInset } from '@/components/ui/sidebar';
+import Link from 'next/link';
+import { Home, ShieldCheck, File, MessageSquare } from 'lucide-react';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -28,8 +30,48 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <SidebarProvider>
-          <div className="flex flex-col min-h-screen">
-            {children}
+          <div className="flex h-screen antialiased text-foreground">
+            <Sidebar collapsible="icon">
+              <SidebarContent>
+                <SidebarMenu>
+                  <SidebarMenuItem>
+                    <Link href="/dashboard" className="w-full">
+                      <SidebarMenuButton>
+                        <Home className="mr-2 h-4 w-4" />
+                        <span>Dashboard</span>
+                      </SidebarMenuButton>
+                    </Link>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <Link href="/regulatory-compliance" className="w-full">
+                      <SidebarMenuButton>
+                        <ShieldCheck className="mr-2 h-4 w-4" />
+                        <span>Regulatory Compliance</span>
+                      </SidebarMenuButton>
+                    </Link>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <Link href="/financial-insights" className="w-full">
+                      <SidebarMenuButton>
+                        <File className="mr-2 h-4 w-4" />
+                        <span>Financial Insights</span>
+                      </SidebarMenuButton>
+                    </Link>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <Link href="/invoice-analysis" className="w-full">
+                      <SidebarMenuButton>
+                        <MessageSquare className="mr-2 h-4 w-4" />
+                        <span>Invoice Analysis</span>
+                      </SidebarMenuButton>
+                    </Link>
+                  </SidebarMenuItem>
+                </SidebarMenu>
+              </SidebarContent>
+            </Sidebar>
+            <SidebarInset>
+              {children}
+            </SidebarInset>
           </div>
         </SidebarProvider>
         <Toaster />
@@ -37,4 +79,3 @@ export default function RootLayout({
     </html>
   );
 }
-
