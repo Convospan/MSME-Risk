@@ -11,18 +11,9 @@ import {
   SheetTrigger,
   SheetContent,
 } from "@/components/ui/sheet";
-import { useState, useEffect } from "react"; // Import useState and useEffect
-
+import React from "react";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true); // Add a loading state
-  useEffect(() => {
-    // Simulate loading data or any async operation
-    setTimeout(() => {
-      setIsLoading(false); // Set loading to false after a delay
-    }, 1000);
-  }, []); // Empty dependency array to run only once on mount
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-start">
       <div className="absolute top-4 right-4 flex space-x-2">
@@ -41,13 +32,12 @@ export default function Home() {
           </SheetContent>
         </Sheet>
       </div>
-      <header className="grid grid-cols-[1fr_auto] items-center px-6 py-4 sm:px-8 lg:grid-cols-[1fr_auto_1fr] mt-16">
+      {/* Hero Section */}
+      <header className="grid grid-cols-[1fr_auto] items-center px-6 py-4 sm:px-8 lg:grid-cols-[1fr_auto_1fr]">
         <div>
           <div className="flex gap-x-1.5 text-sm/6 max-sm:flex-col">
             <h1 className="font-semibold">
-              <Link href="/" className="hover:text-primary-orange transition-colors">
-                ConvoSpan
-              </Link>
+              <Link href="/" className="hover:text-primary-orange transition-colors">ConvoSpan</Link>
             </h1>
             <div className="max-sm:hidden" aria-hidden="true">·</div>
             <p>AI Outreach Platform</p>
@@ -61,10 +51,11 @@ export default function Home() {
           </div>
         </div>
         <div className="justify-self-end">
-          <Link href="/register">
-            <Button className="inline-flex justify-center rounded-full text-sm/6 font-semibold bg-gray-950 text-white hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-950 px-4 py-2">
-              Get Started
-            </Button>
+          <Link
+            href="/register"
+            className="inline-flex justify-center rounded-full text-sm/6 font-semibold bg-gray-950 text-white hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-950 px-4 py-2"
+          >
+            Get Started
           </Link>
         </div>
       </header>
@@ -79,10 +70,11 @@ export default function Home() {
           <p className="text-lg mb-8 max-w-2xl mx-auto">
             I’ll turn your chats into wins with AI magic. Sign up free and let’s get started!
           </p>
-          <Link href="/register">
-            <Button className="bg-cta-pink text-white px-6 py-3 rounded-full shadow-md hover:bg-opacity-90 transition duration-300 inline-block">
-              Start for Free!
-            </Button>
+          <Link
+            href="/register"
+            className="bg-cta-pink text-white px-6 py-3 rounded-full shadow-md hover:bg-opacity-90 transition duration-300 inline-block"
+          >
+            Start for Free!
           </Link>
           <p className="mt-4 text-sm">No card, 7-day trial!</p>
         </motion.div>
@@ -95,6 +87,7 @@ export default function Home() {
         />
       </section>
 
+      {/* Easy Prospecting Section */}
       <section className="py-12 px-4 max-w-6xl mx-auto text-center mt-16">
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
@@ -116,6 +109,7 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* Multi-Channel Magic Section */}
       <section className="py-12 px-4 max-w-6xl mx-auto bg-gray-950/5 rounded-xl shadow-sm mt-16">
         <motion.div
           initial={{ opacity: 0 }}
@@ -170,6 +164,7 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* Lead Management Section */}
       <section className="py-12 px-4 max-w-6xl mx-auto text-center mt-16">
         <motion.div
           initial={{ x: -50, opacity: 0 }}
@@ -191,6 +186,7 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* Payment Plan Section */}
       <section className="py-12 px-4 max-w-6xl mx-auto bg-gray-950/5 rounded-xl shadow-sm mt-16">
         <motion.div
           initial={{ y: 50, opacity: 0 }}
@@ -214,6 +210,7 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* Footer */}
       <footer className="bg-gray-950 text-white py-6 text-center w-full mt-16">
         <p className="text-lg">
           © 2025 ConvoSpan.ai |{' '}

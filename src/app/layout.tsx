@@ -1,4 +1,4 @@
-import type {Metadata} from 'next';
+import type {Metadata} from 'next/server';
 import {Geist, Geist_Mono} from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
@@ -80,3 +80,4 @@ export default function RootLayout({
     </html>
   );
 }
+
