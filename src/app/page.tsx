@@ -30,6 +30,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Icons } from "@/components/icons";
+import { generateSampleCSV } from "@/lib/utils";
 
 const sampleData = [
   { id: 1, col1: "Data 1", col2: "Data 2", col3: "Data 3" },
@@ -60,13 +61,19 @@ export default function Home() {
 
   const onSubmit = useCallback(
     (data: z.infer<typeof formSchema>) => {
+      const csvData = generateSampleCSV(sampleData);
+      const blob = new Blob([csvData], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = data.filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
       toast({
-        title: "You submitted the following values:",
-        description: (
-          
-            {data?.filename}
-          
-        ),
+        title: "Downloading Sample CSV",
+        description: `Downloading ${data?.filename}`,
       });
     },
     [toast]
@@ -110,7 +117,7 @@ export default function Home() {
                 Filename
                 <Input id="filename" defaultValue="data.csv"  {...register("filename")} />
                 {errors.filename && (
-                    {errors.filename?.message}
+                   errors.filename?.message
                   
                 )}
               
@@ -162,3 +169,4 @@ export default function Home() {
     </main>
   );
 }
+
