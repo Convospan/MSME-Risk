@@ -24,6 +24,14 @@ const RegulatoryComplianceSummaryOutputSchema = z.object({
 export type RegulatoryComplianceSummaryOutput = z.infer<typeof RegulatoryComplianceSummaryOutputSchema>;
 
 export async function getRegulatoryComplianceSummary(input: RegulatoryComplianceSummaryInput): Promise<RegulatoryComplianceSummaryOutput> {
+  // Skip API call if GSTIN is empty
+  if (!input.gstin) {
+    return {
+      summary: 'GSTIN not provided.',
+      gstinDetails: null,
+      nextSteps: 'Please provide a valid GSTIN to check compliance status.',
+    };
+  }
   return regulatoryComplianceSummaryFlow(input);
 }
 
