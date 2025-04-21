@@ -1,1 +1,2 @@
-// Flows will be imported for their side effects in this file.
+import '@/ai/flows/financial-statement-insights.ts';
+import '@/ai/flows/invoice-anomaly-summary.ts';
