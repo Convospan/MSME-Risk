@@ -2,6 +2,7 @@
 
 import { Dashboard } from "@/components/dashboard";
 import { DataUpload } from "@/components/data-upload";
+import { RegulatoryComplianceDashboard } from "@/components/regulatory-compliance-dashboard";
 
 export default function DashboardPage() {
   // Mock data for demonstration purposes
@@ -22,6 +23,8 @@ export default function DashboardPage() {
         invoiceAnomalies={mockInvoiceAnomalies}
         isLoading={false}
       />
+
+      <RegulatoryComplianceDashboard gstin="12345ABCDE6789" />
     </div>
   );
 }
