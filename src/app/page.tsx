@@ -11,221 +11,243 @@ import {
   SheetTrigger,
   SheetContent,
 } from "@/components/ui/sheet";
+import { Copy, Download, Lightbulb, Rocket, ShieldCheck, MessageSquare, Code, CheckCircle, TrendingUp, Translate, BookOpen } from 'lucide-react';
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+
+const sampleData = `Description,Photo URL,Identification.isPlant,Identification.commonName,Identification.latinName,Diagnosis.isHealthy,Diagnosis.diagnosis
+"Healthy plant with vibrant green leaves","https://picsum.photos/200/300",true,"Rose","Rosa spp.",true,"No issues detected"
+"Plant with yellowing leaves and brown spots","https://picsum.photos/200/300",true,"Tomato","Solanum lycopersicum",false,"Possible fungal infection"
+"Succulent with wilting leaves","https://picsum.photos/200/300",true,"Echeveria","Echeveria elegans",false,"Overwatering or root rot"
+"Orchid with healthy roots and blooming flowers","https://picsum.photos/200/300",true,"Orchid","Orchidaceae",true,"Vibrant and thriving"
+"Herb with some brown edges on leaves","https://picsum.photos/200/300",true,"Mint","Mentha spp.",false,"Minor nutrient deficiency or dryness"
+`;
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start p-24">
-      <div className="absolute top-4 right-4 flex space-x-2">
-        <Link href="/dashboard">
-          <Button variant="outline">Dashboard</Button>
-        </Link>
-        <Link href="/regulatory-compliance">
-          <Button variant="outline">Regulatory Compliance</Button>
-        </Link>
-        <Link href="/financial-insights">
-          <Button variant="outline">Financial Insights</Button>
-        </Link>
-        <Link href="/invoice-analysis">
-          <Button variant="outline">Invoice Analysis</Button>
-        </Link>
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button variant="outline">Open Sheet</Button>
-          </SheetTrigger>
-          <SheetContent>
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">Sheet Content</h2>
-              <p>This is a sample sheet for additional info or actions.</p>
-            </div>
-          </SheetContent>
-        </Sheet>
-      </div>
+    <main className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground">
+      {/* Navigation Menu */}
+      <nav className="w-full py-4 bg-card shadow-md">
+        <div className="container mx-auto px-6 flex items-center justify-between">
+          <Link href="/" className="font-bold text-xl">
+            AI Coder Bot
+          </Link>
+          <div className="flex items-center space-x-6">
+            <Link href="/features">Features</Link>
+            <Link href="/benefits">Benefits</Link>
+            <Link href="/plans">Plans</Link>
+            <Link href="/process">Process</Link>
+            {/* Add Login/Sign Up buttons if needed */}
+          </div>
+        </div>
+      </nav>
+
       {/* Hero Section */}
-      <header className="grid grid-cols-[1fr_auto] items-center px-6 py-4 sm:px-8 lg:grid-cols-[1fr_auto_1fr] mt-16">
-        <div>
-          <div className="flex gap-x-1.5 text-sm/6 max-sm:flex-col">
-            <h1 className="font-semibold">
-              <a href="/" className="hover:text-primary-orange transition-colors">ConvoSpan</a>
-            </h1>
-            <div className="max-sm:hidden" aria-hidden="true">·</div>
-            <p>AI Outreach Platform</p>
-          </div>
-          <div className="max-sm:hidden overflow-x-auto max-sm:-mx-6 max-sm:pl-6 mt-2">
-            <ul className="flex gap-1.5 text-xs/6 whitespace-nowrap">
-              <li className="flex gap-1.5 text-gray-600 after:text-gray-300 not-last:after:content-['/']">Next.js</li>
-              <li className="flex gap-1.5 text-gray-600 after:text-gray-300 not-last:after:content-['/']">Tailwind CSS</li>
-              <li className="flex gap-1.5 text-gray-600 after:text-gray-300 not-last:after:content-['/']">React</li>
-            </ul>
-          </div>
-        </div>
-        <div className="justify-self-end">
-          <a
-            href="/register"
-            className="inline-flex justify-center rounded-full text-sm/6 font-semibold bg-gray-950 text-white hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-950 px-4 py-2"
-          >
-            Get Started
-          </a>
-        </div>
-      </header>
-      <section className="relative mx-auto w-full max-w-7xl mt-16">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative z-10 text-center bg-accent-blue bg-opacity-80 p-8 rounded-xl text-white"
-        >
-          <h1 className="text-4xl sm:text-5xl font-semibold mb-6">Hey, Let’s Grow Together with ConvoSpan!</h1>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            I’ll turn your chats into wins with AI magic. Sign up free and let’s get started!
-          </p>
-          <a
-            href="/register"
-            className="bg-cta-pink text-white px-6 py-3 rounded-full shadow-md hover:bg-opacity-90 transition duration-300 inline-block"
-          >
-            Start for Free!
-          </a>
-          <p className="mt-4 text-sm">No card, 7-day trial!</p>
-        </motion.div>
+      <section className="relative w-full py-24 bg-muted">
         <Image
-          src="/images/hero-ai-coder.jpg"
-          alt="AI coder at work"
-          fill
-          style={{ objectFit: 'cover', opacity: 0.2 }}
-          className="absolute top-0 left-0 z-0 rounded-xl"
+          src="https://picsum.photos/1920/1080"
+          alt="AI Coder Bot - Your Intelligent Coding Assistant"
+          width={1920}
+          height={1080}
+          className="absolute inset-0 object-cover opacity-30"
+          priority
         />
-      </section>
-
-      {/* Easy Prospecting Section */}
-      <section className="py-12 px-4 max-w-6xl mx-auto text-center mt-16">
-        <motion.div
-          initial={{ scale: 0.9, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <Image
-            src="/images/prospecting-dashboard.jpg"
-            alt="Dashboard"
-            width={600}
-            height={400}
-            className="mx-auto mb-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
-          />
-          <h2 className="text-3xl font-semibold mb-4">Let Me Handle Your Prospecting—Super Easy!</h2>
-          <p className="text-lg mb-6 max-w-3xl mx-auto">
-            I send personalized messages and AI calls across platforms with ease!
+        <div className="container mx-auto text-center relative z-10">
+          <h1 className="text-5xl font-bold text-primary mb-4">AI Coder Bot - Your Intelligent Coding Assistant</h1>
+          <p className="text-xl text-muted-foreground mb-8">
+            Revolutionize your development workflow with AI-powered code generation, debugging, and learning.
           </p>
-        </motion.div>
-      </section>
-
-      {/* Multi-Channel Magic Section */}
-      <section className="py-12 px-4 max-w-6xl mx-auto bg-gray-950/5 rounded-xl shadow-sm mt-16">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl font-semibold mb-6 text-center">Double Your Chances with My Multi-Channel Magic</h2>
-          <p className="text-lg mb-8 text-center max-w-3xl mx-auto">
-            I mix LinkedIn, Twitter/X, email, and AI calls, picking perfect sequences for you!
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <motion.div
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Image src="/images/multi-channel-ai.jpg" alt="Multi-platform" width={300} height={200} className="rounded-lg mb-4" />
-              <h3 className="text-xl font-medium">Smart Sequences</h3>
-              <p className="text-gray-600">AI-crafted outreach plans tailored to your goals.</p>
-            </motion.div>
-            <motion.div
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Image src="/images/lead-management.jpg" alt="Lead chart" width={300} height={200} className="rounded-lg mb-4" />
-              <h3 className="text-xl font-medium">Lead Tracking</h3>
-              <p className="text-gray-600">Real-time insights into your connections.</p>
-            </motion.div>
-            <motion.div
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Image src="/images/payment-success.jpg" alt="Payment" width={300} height={200} className="rounded-lg mb-4" />
-              <h3 className="text-xl font-medium">Flexible Plans</h3>
-              <p className="text-gray-600">Choose a tier that grows with you.</p>
-            </motion.div>
+          <div className="flex items-center justify-center space-x-4">
+            <Button size="lg">Start Coding for Free</Button>
+            <Button variant="secondary" size="lg">Explore Our Plans</Button>
           </div>
-          <div className="mt-8 text-center">
-            <h3 className="text-2xl font-medium mb-4">How We Start, Launch, and Win Together</h3>
-            <Image
-              src="/images/campaign-process-infographic.jpg"
-              alt="Process infographic"
-              width={800}
-              height={400}
-              className="mx-auto rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
-            />
-            <p className="mt-4 text-sm">Steps: Sign Up, Plan, Build & Test, Meet AI Caller, Launch, Tweak, Celebrate!</p>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-semibold text-center mb-8">
+            Supercharge Your Coding with Powerful AI Features
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Code Generation */}
+            <div className="flex items-start space-x-4">
+              <Code className="text-primary h-6 w-6" />
+              <div>
+                <h3 className="font-semibold">Code Generation</h3>
+                <p className="text-muted-foreground">
+                  Instantly generate code snippets, functions, and even entire modules based on your specifications.
+                </p>
+              </div>
+            </div>
+            {/* Code Completion */}
+            <div className="flex items-start space-x-4">
+              <Lightbulb className="text-primary h-6 w-6" />
+              <div>
+                <h3 className="font-semibold">Code Completion</h3>
+                <p className="text-muted-foreground">
+                  Get intelligent suggestions as you type, reducing errors and speeding up development.
+                </p>
+              </div>
+            </div>
+            {/* Debugging Assistance */}
+            <div className="flex items-start space-x-4">
+              <ShieldCheck className="text-primary h-6 w-6" />
+              <div>
+                <h3 className="font-semibold">Debugging Assistance</h3>
+                <p className="text-muted-foreground">
+                  Identify and understand errors faster with AI-powered explanations and potential solutions.
+                </p>
+              </div>
+            </div>
+            {/* Code Refactoring */}
+            <div className="flex items-start space-x-4">
+              <Rocket className="text-primary h-6 w-6" />
+              <div>
+                <h3 className="font-semibold">Code Refactoring</h3>
+                <p className="text-muted-foreground">
+                  Optimize and improve your existing code with AI-driven suggestions for readability and efficiency.
+                </p>
+              </div>
+            </div>
+            {/* Language Translation */}
+            <div className="flex items-start space-x-4">
+              <Translate className="text-primary h-6 w-6" />
+              <div>
+                <h3 className="font-semibold">Language Translation</h3>
+                <p className="text-muted-foreground">
+                  Seamlessly translate code between different programming languages.
+                </p>
+              </div>
+            </div>
+            {/* Learning & Explanation */}
+            <div className="flex items-start space-x-4">
+              <BookOpen className="text-primary h-6 w-6" />
+              <div>
+                <h3 className="font-semibold">Learning & Explanation</h3>
+                <p className="text-muted-foreground">
+                  Understand complex code concepts and algorithms with AI-powered explanations and examples.
+                </p>
+              </div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
-      {/* Lead Management Section */}
-      <section className="py-12 px-4 max-w-6xl mx-auto text-center mt-16">
-        <motion.div
-          initial={{ x: -50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <Image
-            src="/images/lead-management.jpg"
-            alt="Lead flow chart"
-            width={600}
-            height={400}
-            className="mx-auto mb-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
-          />
-          <h2 className="text-3xl font-semibold mb-4">Keep Track of Leads with Me—Simple and Fun!</h2>
-          <p className="text-lg mb-6 max-w-3xl mx-auto">
-            My dashboard organizes everything for your success!
-          </p>
-        </motion.div>
+      {/* Benefits Section */}
+      <section className="py-16 bg-muted">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-semibold text-center mb-8">
+            Unlock Limitless Potential and Efficiency
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Boost Productivity */}
+            <div className="flex items-start space-x-4">
+              <TrendingUp className="text-primary h-6 w-6" />
+              <div>
+                <h3 className="font-semibold">Boost Productivity</h3>
+                <p className="text-muted-foreground">
+                  Write code faster and more efficiently, freeing up time for complex problem-solving.
+                </p>
+              </div>
+            </div>
+            {/* Reduce Errors */}
+            <div className="flex items-start space-x-4">
+              <CheckCircle className="text-primary h-6 w-6" />
+              <div>
+                <h3 className="font-semibold">Reduce Errors</h3>
+                <p className="text-muted-foreground">
+                  Intelligent suggestions and debugging help minimize mistakes and improve code quality.
+                </p>
+              </div>
+            </div>
+            {/* Accelerate Learning */}
+            <div className="flex items-start space-x-4">
+              <Lightbulb className="text-primary h-6 w-6" />
+              <div>
+                <h3 className="font-semibold">Accelerate Learning</h3>
+                <p className="text-muted-foreground">
+                  Grasp new programming languages and concepts quickly with AI-powered explanations.
+                </p>
+              </div>
+            </div>
+            {/* Improve Code Quality */}
+            <div className="flex items-start space-x-4">
+              <Code className="text-primary h-6 w-6" />
+              <div>
+                <h3 className="font-semibold">Improve Code Quality</h3>
+                <p className="text-muted-foreground">
+                  Refactor and optimize your code for better performance and maintainability.
+                </p>
+              </div>
+            </div>
+            {/* Explore New Languages */}
+            <div className="flex items-start space-x-4">
+              <Translate className="text-primary h-6 w-6" />
+              <div>
+                <h3 className="font-semibold">Explore New Languages</h3>
+                <p className="text-muted-foreground">
+                  Easily experiment with and translate between different programming paradigms.
+                </p>
+              </div>
+            </div>
+            {/* Stay Ahead of the Curve */}
+            <div className="flex items-start space-x-4">
+              <Rocket className="text-primary h-6 w-6" />
+              <div>
+                <h3 className="font-semibold">Stay Ahead of the Curve</h3>
+                <p className="text-muted-foreground">
+                  Leverage the latest AI advancements in your development workflow.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* Payment Plan Section */}
-      <section className="py-12 px-4 max-w-6xl mx-auto bg-gray-950/5 rounded-xl shadow-sm mt-16">
-        <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <Image
-            src="/images/payment-success.jpg"
-            alt="Payment confirmation"
-            width={600}
-            height={400}
-            className="mx-auto mb-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
-          />
-          <h2 className="text-3xl font-semibold mb-6 text-center">Choose a Plan That Fits Us!</h2>
-          <p className="text-lg mb-8 text-center max-w-3xl mx-auto">
-            Basic ₹999, Pro ₹2,999, Enterprise ₹9,999+—let’s grow together!
-          </p>
-          <PaymentForm />
-          <CampaignForm />
-        </motion.div>
+      {/* Sample Data Display (Table) */}
+      <section className="py-8">
+        <div className="container mx-auto">
+          <h2 className="text-2xl font-semibold text-center mb-4">Sample Bot Output</h2>
+          <Table>
+            <TableCaption>A preview of the data to be analyzed.</TableCaption>
+            <TableHeader>
+              <TableRow>
+                <TableHead className="w-[150px]">Description</TableHead>
+                <TableHead>Photo URL</TableHead>
+                <TableHead>isPlant</TableHead>
+                <TableHead>Common Name</TableHead>
+                <TableHead>Latin Name</TableHead>
+                <TableHead>isHealthy</TableHead>
+                <TableHead>Diagnosis</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+            {sampleData.split('\n').slice(1).map((row, index) => {
+                const [Description, Photo, isPlant, Common, Latin, isHealthy, Diagnosis] = row.split(',');
+                return (
+                  <TableRow key={index}>
+                    <TableCell className="font-medium">{Description}</TableCell>
+                    <TableCell><a href={Photo} target="_blank" rel="noopener noreferrer">View Image</a></TableCell>
+                    <TableCell>{isPlant}</TableCell>
+                    <TableCell>{Common}</TableCell>
+                    <TableCell>{Latin}</TableCell>
+                    <TableCell>{isHealthy}</TableCell>
+                    <TableCell>{Diagnosis}</TableCell>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-950 text-white py-6 text-center w-full mt-16">
-        <p className="text-lg">
-          © 2025 ConvoSpan.ai |
-          <a href="/contact" className="underline text-primary-orange hover:text-opacity-80 transition duration-300">
-            Contact
-          </a>
-        </p>
+      <footer className="py-6 text-center bg-card w-full">
+        <div className="container mx-auto">
+          © 2025 AI Coder Bot. All rights reserved.
+          {/* Add Privacy Policy and Terms of Service links if needed */}
+        </div>
       </footer>
     </main>
   );
