@@ -28,10 +28,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <SidebarProvider>
-          {children}
+          <div className="flex flex-col min-h-screen">
+            {children}
+          </div>
         </SidebarProvider>
         <Toaster />
       </body>
     </html>
   );
 }
+

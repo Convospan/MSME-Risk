@@ -3,6 +3,8 @@
 import { Dashboard } from "@/components/dashboard";
 import { DataUpload } from "@/components/data-upload";
 import { RegulatoryComplianceDashboard } from "@/components/regulatory-compliance-dashboard";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function DashboardPage() {
   // Mock data for demonstration purposes
@@ -16,6 +18,11 @@ export default function DashboardPage() {
   return (
     <div className="container mx-auto py-10">
       <h1 className="text-3xl font-bold mb-4">MSME Insights AI Dashboard</h1>
+      <Link href="/">
+        <Button variant="outline" className="mb-4">
+          Back to Home
+        </Button>
+      </Link>
       <DataUpload />
       <Dashboard
         creditScore={mockCreditScore}
@@ -28,3 +35,4 @@ export default function DashboardPage() {
     </div>
   );
 }
+
