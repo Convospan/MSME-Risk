@@ -6,15 +6,25 @@ import { RegulatoryComplianceDashboard } from "@/components/regulatory-complianc
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { AIToolsSummary } from "@/components/ai-tools-summary";
+import { useEffect, useState } from "react";
 
 export default function DashboardPage() {
   // Mock data for demonstration purposes
-  const mockCreditScore = 680;
-  const mockDefaultProbability = 0.05;
-  const mockInvoiceAnomalies = [
+  const [mockCreditScore, setMockCreditScore] = useState(680);
+  const [mockDefaultProbability, setMockDefaultProbability] = useState(0.05);
+  const [mockInvoiceAnomalies, setMockInvoiceAnomalies] = useState([
     "Invoice #123: Amount mismatch",
     "Invoice #456: Duplicate entry",
-  ];
+  ]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    // Simulate loading data
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
 
   return (
     <div className="container mx-auto py-10">
@@ -29,7 +39,7 @@ export default function DashboardPage() {
         creditScore={mockCreditScore}
         defaultProbability={mockDefaultProbability}
         invoiceAnomalies={mockInvoiceAnomalies}
-        isLoading={false}
+        isLoading={isLoading}
       />
       <AIToolsSummary />
       <RegulatoryComplianceDashboard gstin="12345ABCDE6789" />
