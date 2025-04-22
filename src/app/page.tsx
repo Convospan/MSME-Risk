@@ -1,54 +1,19 @@
-"use client";
-
+import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import PaymentForm from '@/components/PaymentForm';
 import CampaignForm from '@/components/CampaignForm';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { useState, useEffect } from 'react';
-import {
-  Sheet,
-  SheetTrigger,
-  SheetContent,
-} from "@/components/ui/sheet";
-
-function calculateTimeRemaining() {
-  const now = new Date();
-  const endOfYear = new Date(now.getFullYear(), 11, 31); // December is 11 (zero-based)
-  const difference = endOfYear.getTime() - now.getTime();
-  const daysRemaining = Math.ceil(difference / (1000 * 3600 * 24));
-  return daysRemaining;
-}
+import { Button } from '@/components/ui/button'; // Adjust import based on your Button source
 
 export default function Home() {
-  const [daysLeft, setDaysLeft] = useState(calculateTimeRemaining);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setDaysLeft(calculateTimeRemaining);
-    }, 1000 * 60 * 60 * 24); // Update every 24 hours
-
-    return () => clearInterval(intervalId); // Cleanup on unmount
-  }, []);
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-start p-24">
       <div className="absolute top-4 right-4 flex space-x-2">
         <Link href="/dashboard">
           <Button variant="outline">Dashboard</Button>
         </Link>
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button variant="outline">Open Sheet</Button>
-          </SheetTrigger>
-          <SheetContent>
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">Sheet Content</h2>
-              <p>This is a sample sheet for additional info or actions.</p>
-            </div>
-          </SheetContent>
-        </Sheet>
+        {/* Add more navigation links if needed */}
       </div>
       {/* Hero Section */}
       <header className="grid grid-cols-[1fr_auto] items-center px-6 py-4 sm:px-8 lg:grid-cols-[1fr_auto_1fr]">
@@ -94,7 +59,7 @@ export default function Home() {
           >
             Start for Free!
           </Link>
-          <p className="mt-4 text-sm">No card, 7-day trial! {daysLeft} days until the end of the year!</p>
+          <p className="mt-4 text-sm">No card, 7-day trial!</p>
         </motion.div>
         <Image
           src="/images/hero-ai-coder.jpg"
