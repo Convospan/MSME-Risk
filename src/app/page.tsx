@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start">
+    <main className="flex min-h-screen flex-col items-center justify-start p-6 md:p-12 lg:p-24">
       <div className="absolute top-4 right-4 flex space-x-2">
         <Link href="/dashboard">
           <Button variant="outline">Dashboard</Button>
@@ -23,7 +23,7 @@ export default function Home() {
         </Link>
       </div>
       {/* Hero Section */}
-      <header className="grid grid-cols-[1fr_auto] items-center px-6 py-4 sm:px-8 lg:grid-cols-[1fr_auto_1fr] mt-16">
+      <header className="grid grid-cols-[1fr_auto] items-center px-6 py-4 sm:px-8 lg:grid-cols-[1fr_auto_1fr]">
         <div>
           <div className="flex gap-x-1.5 text-sm/6 max-sm:flex-col">
             <h1 className="font-semibold">
@@ -41,23 +41,23 @@ export default function Home() {
           </div>
         </div>
       </header>
-      <section className="relative mx-auto w-full max-w-7xl mt-16">
+      <section className="relative mx-auto w-full max-w-7xl mt-8 md:mt-16">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-10 text-center bg-accent-blue bg-opacity-80 p-8 rounded-xl text-white"
+          className="relative z-10 text-center bg-accent-blue bg-opacity-80 p-6 md:p-8 rounded-xl text-white shadow-md"
         >
-          <h1 className="text-4xl sm:text-5xl font-semibold mb-6">Hey, Let’s Grow Together with ConvoSpan!</h1>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            I’ll turn your chats into wins with AI magic. Sign up free and let’s get started!
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-4 md:mb-6">Hey, Let’s Grow Together with MSME Insights AI!</h1>
+          <p className="text-lg mb-6 max-w-2xl mx-auto">
+            We’ll turn your chats into wins with AI magic. Sign up free and let’s get started!
           </p>
-          <a
+          <Link
             href="/register"
             className="bg-cta-pink text-white px-6 py-3 rounded-full shadow-md hover:bg-opacity-90 transition duration-300 inline-block"
           >
             Start for Free!
-          </a>
+          </Link>
           <p className="mt-4 text-sm">No card, 7-day trial!</p>
         </motion.div>
         <Image
@@ -70,7 +70,7 @@ export default function Home() {
       </section>
 
       {/* Easy Prospecting Section */}
-      <section className="py-12 px-4 max-w-6xl mx-auto text-center mt-16">
+      <section className="py-6 px-4 md:py-12 max-w-6xl mx-auto text-center mt-8 md:mt-16">
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
@@ -82,9 +82,9 @@ export default function Home() {
             alt="Dashboard"
             width={600}
             height={400}
-            className="mx-auto mb-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            className="mx-auto mb-4 md:mb-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
           />
-          <h2 className="text-3xl font-semibold mb-4">Let Me Handle Your Prospecting—Super Easy!</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-3 md:mb-4">Let Me Handle Your Prospecting—Super Easy!</h2>
           <p className="text-lg mb-6 max-w-3xl mx-auto">
             I send personalized messages and AI calls across platforms with ease!
           </p>
@@ -92,48 +92,48 @@ export default function Home() {
       </section>
 
       {/* Multi-Channel Magic Section */}
-      <section className="py-12 px-4 max-w-6xl mx-auto bg-gray-950/5 rounded-xl shadow-sm mt-16">
+      <section className="py-6 px-4 md:py-12 max-w-6xl mx-auto bg-gray-950/5 rounded-xl shadow-sm mt-8 md:mt-16">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-semibold mb-6 text-center">Double Your Chances with My Multi-Channel Magic</h2>
-          <p className="text-lg mb-8 text-center max-w-3xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4 md:mb-6 text-center">Double Your Chances with My Multi-Channel Magic</h2>
+          <p className="text-lg mb-6 md:mb-8 text-center max-w-3xl mx-auto">
             I mix LinkedIn, Twitter/X, email, and AI calls, picking perfect sequences for you!
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             <motion.div
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-white p-4 md:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <Image src="/images/multi-channel-ai.jpg" alt="Multi-platform" width={300} height={200} className="rounded-lg mb-4" />
+              <Image src="/images/multi-channel-ai.jpg" alt="Multi-platform" width={300} height={200} className="rounded-lg mb-3 md:mb-4" />
               <h3 className="text-xl font-medium">Smart Sequences</h3>
               <p className="text-gray-600">AI-crafted outreach plans tailored to your goals.</p>
             </motion.div>
             <motion.div
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-white p-4 md:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <Image src="/images/lead-management.jpg" alt="Lead chart" width={300} height={200} className="rounded-lg mb-4" />
+              <Image src="/images/lead-management.jpg" alt="Lead chart" width={300} height={200} className="rounded-lg mb-3 md:mb-4" />
               <h3 className="text-xl font-medium">Lead Tracking</h3>
               <p className="text-gray-600">Real-time insights into your connections.</p>
             </motion.div>
             <motion.div
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-white p-4 md:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <Image src="/images/payment-success.jpg" alt="Payment" width={300} height={200} className="rounded-lg mb-4" />
+              <Image src="/images/payment-success.jpg" alt="Payment" width={300} height={200} className="rounded-lg mb-3 md:mb-4" />
               <h3 className="text-xl font-medium">Flexible Plans</h3>
               <p className="text-gray-600">Choose a tier that grows with you.</p>
             </motion.div>
           </div>
-          <div className="mt-8 text-center">
-            <h3 className="text-2xl font-medium mb-4">How We Start, Launch, and Win Together</h3>
+          <div className="mt-6 md:mt-8 text-center">
+            <h3 className="text-xl md:text-2xl font-medium mb-3 md:mb-4">How We Start, Launch, and Win Together</h3>
             <Image
               src="/images/campaign-process-infographic.jpg"
               alt="Process infographic"
@@ -141,13 +141,13 @@ export default function Home() {
               height={400}
               className="mx-auto rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
             />
-            <p className="mt-4 text-sm">Steps: Sign Up, Plan, Build & Test, Meet AI Caller, Launch, Tweak, Celebrate!</p>
+            <p className="mt-3 md:mt-4 text-sm">Steps: Sign Up, Plan, Build & Test, Meet AI Caller, Launch, Tweak, Celebrate!</p>
           </div>
         </motion.div>
       </section>
 
       {/* Lead Management Section */}
-      <section className="py-12 px-4 max-w-6xl mx-auto text-center mt-16">
+      <section className="py-6 px-4 md:py-12 max-w-6xl mx-auto text-center mt-8 md:mt-16">
         <motion.div
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -159,9 +159,9 @@ export default function Home() {
             alt="Lead flow chart"
             width={600}
             height={400}
-            className="mx-auto mb-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            className="mx-auto mb-4 md:mb-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
           />
-          <h2 className="text-3xl font-semibold mb-4">Keep Track of Leads with Me—Simple and Fun!</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-3 md:mb-4">Keep Track of Leads with Me—Simple and Fun!</h2>
           <p className="text-lg mb-6 max-w-3xl mx-auto">
             My dashboard organizes everything for your success!
           </p>
@@ -169,7 +169,7 @@ export default function Home() {
       </section>
 
       {/* Payment Plan Section */}
-      <section className="py-12 px-4 max-w-6xl mx-auto bg-gray-950/5 rounded-xl shadow-sm mt-16">
+      <section className="py-6 px-4 md:py-12 max-w-6xl mx-auto bg-gray-950/5 rounded-xl shadow-sm mt-8 md:mt-16">
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -181,10 +181,10 @@ export default function Home() {
             alt="Payment confirmation"
             width={600}
             height={400}
-            className="mx-auto mb-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            className="mx-auto mb-4 md:mb-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
           />
-          <h2 className="text-3xl font-semibold mb-6 text-center">Choose a Plan That Fits Us!</h2>
-          <p className="text-lg mb-8 text-center max-w-3xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4 md:mb-6 text-center">Choose a Plan That Fits Us!</h2>
+          <p className="text-lg mb-6 md:mb-8 text-center max-w-3xl mx-auto">
             Basic ₹999, Pro ₹2,999, Enterprise ₹9,999+—let’s grow together!
           </p>
           <PaymentForm />
@@ -193,7 +193,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-950 text-white py-6 text-center w-full mt-16">
+      <footer className="bg-gray-950 text-white py-4 md:py-6 text-center w-full mt-8 md:mt-16">
         <p className="text-lg">
           © 2025 ConvoSpan.ai |{' '}
           <Link href="/contact" className="underline text-primary-orange hover:text-opacity-80 transition duration-300">
