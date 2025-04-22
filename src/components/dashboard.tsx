@@ -14,9 +14,9 @@ interface DashboardProps {
 }
 
 export const Dashboard = ({
-  creditScore,
-  defaultProbability,
-  invoiceAnomalies,
+  creditScore = 0,
+  defaultProbability = 0,
+  invoiceAnomalies = [],
   isLoading = true,
 }: DashboardProps) => {
   return (
@@ -29,7 +29,7 @@ export const Dashboard = ({
           {isLoading ? (
             <Skeleton className="h-8 w-20 animate-pulse" />
           ) : (
-            <CreditScore score={creditScore || 0} />
+            <CreditScore score={creditScore} />
           )}
         </CardContent>
       </Card>
@@ -42,7 +42,7 @@ export const Dashboard = ({
           {isLoading ? (
             <Skeleton className="h-8 w-20 animate-pulse" />
           ) : (
-            <ProbabilityOfDefault probability={defaultProbability || 0} />
+            <ProbabilityOfDefault probability={defaultProbability} />
           )}
         </CardContent>
       </Card>
@@ -55,7 +55,7 @@ export const Dashboard = ({
           {isLoading ? (
             <Skeleton className="h-8 w-40 animate-pulse" />
           ) : (
-            <InvoiceAnomalies anomalies={invoiceAnomalies || []} />
+            <InvoiceAnomalies anomalies={invoiceAnomalies} />
           )}
         </CardContent>
       </Card>

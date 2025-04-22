@@ -10,9 +10,9 @@ import { useEffect, useState } from "react";
 
 export default function DashboardPage() {
   // Mock data for demonstration purposes
-  const [mockCreditScore, setMockCreditScore] = useState(680);
-  const [mockDefaultProbability, setMockDefaultProbability] = useState(0.05);
-  const [mockInvoiceAnomalies, setMockInvoiceAnomalies] = useState([
+  const [mockCreditScore, setMockCreditScore] = useState<number | undefined>(680);
+  const [mockDefaultProbability, setMockDefaultProbability] = useState<number | undefined>(0.05);
+  const [mockInvoiceAnomalies, setMockInvoiceAnomalies] = useState<string[] | undefined>([
     "Invoice #123: Amount mismatch",
     "Invoice #456: Duplicate entry",
   ]);
@@ -23,6 +23,7 @@ export default function DashboardPage() {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
+      // Optionally, set the mock data here if you want it to appear after loading
     }, 1000);
   }, []);
 
